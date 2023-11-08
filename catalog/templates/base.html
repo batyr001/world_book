@@ -53,8 +53,6 @@
                             href="{% url 'my-borrowed' %}">Мои заказы</a>
                         <a class="nav-link"
                             href="{% url 'edit_authors' %}">Редактор авторов</a>
-                        <a class="nav-link" href="{% url 'edit_books' %}">Редактор книг</a>
-                        <a class="nav-link"
                         {% else %}
                     <a class="nav-link" href="{% url 'login' %}?next={{ request.path }}">Вход</a>
                         {% endif %}
@@ -108,3 +106,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 <title>Document</title> {% endcomment %}
+
+{% comment %} <a class="nav-link" href="{% url 'edit_books' %}">Редактор книг</a>
+<a class="nav-link" {% endcomment %}
