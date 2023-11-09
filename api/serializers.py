@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from catalog.models import Book,Genre,Language,Publisher,Author,Status
+from catalog.models import Book,Genre,Language,Publisher,Author,Status,BookInstance
 
 class BookSerializer(serializers.ModelSerializer):
     # publisher = serializers.ReadOnlyField()
@@ -39,3 +39,9 @@ class StatusSerializer(serializers.ModelSerializer):
         model = Status        
         fields= "__all__"
            
+
+class BookInstanceSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = BookInstance        
+        fields= "__all__"        
