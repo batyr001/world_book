@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from catalog.models import Book
+from catalog.models import Book,Genre   
 
 class BookSerializer(serializers.ModelSerializer):
     # publisher = serializers.ReadOnlyField()
@@ -8,4 +8,11 @@ class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields= "__all__"
+        
+# class GenreSerializer(serializers.ModelSerializer):
+    
+#     class Meta:
+#         model = Genre        
+#         fields= "__all__"
+        
         
