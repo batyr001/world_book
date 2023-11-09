@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
 from rest_framework import viewsets
-from .serializers import BookSerializer,GenreSerializer,LanguageSerializer,PublisherSerializer
-from catalog.models import Book,Genre,Language,Publisher  
+from .serializers import BookSerializer,GenreSerializer,LanguageSerializer,PublisherSerializer,AuthorSerializer,StatusSerializer
+from catalog.models import Book,Genre,Language,Publisher,Author,Status
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
@@ -22,4 +22,14 @@ class LanguageViewSet(viewsets.ModelViewSet):
 class PublisherViewSet(viewsets.ModelViewSet):
     queryset = Publisher.objects.all()
     serializer_class = PublisherSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+class AuthorViewSet(viewsets.ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+    permission_classes = [permissions.IsAuthenticated]
+ 
+class StatusViewSet(viewsets.ModelViewSet):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
     permission_classes = [permissions.IsAuthenticated]
