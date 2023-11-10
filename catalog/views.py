@@ -135,5 +135,5 @@ def edit_author(requrst, id):
 def edit_books(request): 
     book = Book.objects.all()
     context = {'book': book}
-    return render(request, 'catalog/edit_books.html', context)
+    return render(request, 'edit_books.html', context)
   
